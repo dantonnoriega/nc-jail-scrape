@@ -14,7 +14,7 @@ if(any(indx)) invisible(lapply(PATHS[indx], dir.create))
 # functions list
 FUNS <- list(
   f <- function(x) get_wake_county_inmate_data(OUTPUT_DIR = x),
-  f <- function(x) lapply(c(0,1,30), get_durham_county_inmate_data, OUTPUT_DIR = x)
+  f <- function(x) for(i in c(0,1,30)) get_durham_county_inmate_data(i, OUTPUT_DIR = x)
 )
 
 mapply(function(f, x) f(x), FUNS, PATHS)
