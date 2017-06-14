@@ -18,7 +18,7 @@ get_wake_county_inmate_data <- function(OUTPUT_DIR = "~/Dropbox/Jails/data") {
     sord = "asc"
   )
 
-  r <- httr::POST(url, body = body, encoding = 'form') # sending form data request
+  r <- httr::POST(url, body = body, encoding = 'form', httr::verbose()) # sending form data request
 
   tbl <- httr::content(r, "parsed", "application/json") %>% # data is in json
     '$'('rows') %>% # what we want is in the 'rows' array

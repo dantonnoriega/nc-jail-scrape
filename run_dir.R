@@ -17,4 +17,4 @@ FUNS <- list(
   f <- function(x) lapply(c(0,1,30), get_durham_county_inmate_data, OUTPUT_DIR = x)
 )
 
-mapply(function(f,x) f(x), FUNS, PATHS)
+mapply(function(f, x) f(x), FUNS, PATHS)
